@@ -6,7 +6,7 @@
         var buildCurrentUrl = $(container).attr('href');
 
         function currentUrl() {
-            return $(location).attr('href');
+            return encodeURIComponent($(location).attr('href'));
         }
 
         container.attr('href', buildCurrentUrl.replace('{{currentUrl}}', currentUrl()));
