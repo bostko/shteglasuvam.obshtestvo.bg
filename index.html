@@ -16,7 +16,8 @@
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollgress.min.js"></script>
 		<script src="js/skel.min.js"></script>
-		<script src="js/init.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/libs.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -62,9 +63,14 @@
 					</nav>
 					
 					<ul id="social_actions">
-						<li><a href="http://twitter.com/share?url=http://shteglasuvam.obshtestvo.bg&text=Аз ще гласувам!" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="http://www.facebook.com/sharer.php?u=http://shteglasuvam.obshtestvo.bg" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="https://plus.google.com/share?url=http://shteglasuvam.obshtestvo.bg" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="http://twitter.com/share?url={{currentUrl}}&text=Аз ще гласувам!" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="http://www.facebook.com/sharer.php?u={{currentUrl}}" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://plus.google.com/share?url={{currentUrl}}" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+                        <script>
+                            $('a.fa-twitter').combineCurrentUrl();
+                            $('a.fa-facebook').combineCurrentUrl();
+                            $('a.fa-google-plus').combineCurrentUrl();
+                        </script>
 
 					</ul>
 					
